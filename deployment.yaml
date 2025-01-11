@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: sample-api
+  name: sample-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-api
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: sample-api
+    spec:
+      containers:
+      - image: kento19941221/kube-prac
+        name: sample-api
