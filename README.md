@@ -47,3 +47,13 @@ $ minikube start --driver=docker
 ```
 $ minikube status
 ```
+
+## API用DockerイメージのDockerHubPush手順
+1.イメージのビルド
+$ docker build . -t kube-sample-api
+
+2.イメージにタグつけ
+$ docker tag kube-sample-api kento19941221/kube-prac:latest
+
+3.Dockerhubへプッシュ
+$ docker push kento19941221/kube-prac:latest
